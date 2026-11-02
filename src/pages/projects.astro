@@ -1,0 +1,26 @@
+---
+import ImageCard from "@/components/ImageCard.astro";
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "Projects by Lama Almutairi.",
+	title: "Projects",
+};
+
+// To add a project, copy the example below. To use a real image, put the file in public/projects/
+// and add: image: "/projects/my-image.png", imageAlt: "What the image shows",
+const projects = [
+	{
+		title: "Example Project",
+		description:
+			"A brief description of the project: the problem it addresses, your approach and the outcome.",
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-12">Projects</h1>
+	<ul class="space-y-10" role="list">
+		{projects.map((project) => <ImageCard {...project} />)}
+	</ul>
+</PageLayout>

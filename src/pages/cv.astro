@@ -1,0 +1,22 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "CV of Lama Almutairi.",
+	title: "CV",
+};
+
+const cvPath = "/Lama_Almutairi_CV.pdf";
+---
+
+<PageLayout meta={meta}>
+	<div class="mb-12 flex flex-wrap items-baseline justify-between gap-x-4">
+		<h1 class="title">CV</h1>
+		<a class="cactus-link" download href={cvPath}>Download PDF</a>
+	</div>
+	<object class="h-[80vh] w-full" data={cvPath} title="CV of Lama Almutairi" type="application/pdf">
+		<p>
+			Your browser can’t display the PDF here. <a class="cactus-link" href={cvPath}>Open the CV</a> instead.
+		</p>
+	</object>
+</PageLayout>

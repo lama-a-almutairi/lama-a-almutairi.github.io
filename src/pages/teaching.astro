@@ -1,0 +1,40 @@
+---
+import ImageCard from "@/components/ImageCard.astro";
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "Teaching, workshops and mentoring by Lama Almutairi.",
+	title: "Teaching",
+};
+
+// To use a real image, put the file in public/teaching/ and add to an entry:
+// image: "/teaching/my-image.png", imageAlt: "What the image shows",
+// TODO: add any university teaching from the academic CV.
+const teaching = [
+	{
+		title: "Person Re-ID Workshop",
+		org: "SAMI",
+		date: "2025",
+		description: "A 2-hour workshop to showcase our work on Person Re-ID for 25+ attendees.",
+	},
+	{
+		title: "Workshop instructor, Teachable Machine",
+		org: "Code for Girls",
+		date: "2022",
+		description: "A 2-hour introduction to machine learning for 50+ attendees.",
+	},
+	{
+		title: "Assistant instructor, front-end web development",
+		org: "Code for Girls",
+		date: "2022",
+		description: "Over 20 hours teaching web fundamentals to participants aged 12 to 28.",
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-12">Teaching</h1>
+	<ul class="space-y-10" role="list">
+		{teaching.map((item) => <ImageCard {...item} />)}
+	</ul>
+</PageLayout>
